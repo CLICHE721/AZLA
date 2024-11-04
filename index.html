@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <!-- Js -->
+    <script src="./javascript/jquery-3.7.1.min.js"></script>
+    <script src="./javascript/script.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <title>AZLA-MainPage</title>
+</head>
+
+<body>
+    <header>
+        <div class="inner">
+            <h1 class="logo">
+                <a href="#">AZLA</a>
+            </h1>
+            <nav>
+                <ul class="main-menu">
+                    <li><a href="#" data-submenu="hires-earphones">이어폰</a></li>
+                    <li><a href="#" data-submenu="silicone-SednaEarfit">이어팁</a></li>
+                    <li><a href="#" data-submenu="audio">오디오</a></li>
+                    <!-- <li><a href="#" data-submenu="earplugs">이어플러그</a></li> -->
+                    <li><a href="#" data-submenu="cables">케이블</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="찾기">
+                        <button class="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="cart-container">
+                    <a href="#" class="cart-button">
+                        <i class="fas fa-shopping-cart cart-icon"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="flex justify-center items-center vh-100">
+                <div class="element flex flex-wrap items-center">
+                    <label class="checkbox-wrap">
+                        <input type="checkbox" class="toggle-switch">
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="sub-menu-container">
+            <!-- 이어폰 -->
+            <div id="hires-earphones" class="sub-menu-content">
+                <div class="sub-menu-column main-categories">
+                    <ul>
+                        <li><a href="#" data-subcategory="hires">Hires Earphones</a></li>
+                        <li><a href="#" data-subcategory="silicone">Silicone Earphones</a></li>
+                        <li><a href="#" data-subcategory="gaming">Gaming</a></li>
+                        <li><a href="#" data-subcategory="wireless">Wireless</a></li>
+                    </ul>
+                </div>
+                <div class="sub-menu-column sub-categories">
+                    <ul id="hires-sub">
+                        <li><a href="#" data-image="./img/ares.png" data-subcategory="hires">AIM C</a></li>
+                        <li><a href="#" data-image="./img/horizon.png" data-subcategory="hires">HORIZON Ⅱ</a></li>
+                        <li><a href="#" data-image="./img/01r_mk2.png" data-subcategory="hires">01R MK2</a></li>
+                        <li><a href="#" data-image="./img/zwei.png" data-subcategory="hires">ZWEI</a></li>
+                        <li><a href="#" data-image="./img/orta.png" data-subcategory="hires">ORTA</a></li>
+                        <li><a href="#" data-image="./img/horizon.png" data-subcategory="hires">HORIZON</a></li>
+                    </ul>
+                    <ul id="silicone-sub" style="display: none;">
+                        <li><a href="#">ASE-500</a></li>
+                        <li><a href="#">ASE-500 ASMR</a></li>
+                    </ul>
+                    <ul id="gaming-sub" style="display: none;">
+                        <li><a href="#">AZEL EDITION G GEN 2</a></li>
+                        <li><a href="#">PASCAL</a></li>
+                        <li><a href="#">ARES Clear</a></li>
+                        <li><a href="#">AWACS</a></li>
+                        <li><a href="#">ANUBIS</a></li>
+                        <li><a href="#">AZEL Edition G</a></li>
+                        <li><a href="#">ARES</a></li>
+                        <li><a href="#">AIM 8</a></li>
+                    </ul>
+                    <ul id="wireless-sub" style="display: none;">
+                        <li><a href="#">RF2000</a></li>
+                    </ul>
+                </div>
+                <div class="sub-menu-column image-column">
+                    <img id="product-image" src="./img/ares.png" alt="Earphones">
+                </div>
+            </div>
+
+            <!-- 이어팁 -->
+            <div id="silicone-SednaEarfit" class="sub-menu-content">
+                <div class="sub-menu-column main-categories">
+                    <ul>
+                        <li><a href="#" data-subcategory="Foamax">Foamax</a></li>
+                        <li><a href="#" data-subcategory="MAX">MAX</a></li>
+                        <li><a href="#" data-subcategory="MAX ASMR">MAX ASMR</a></li>
+                        <li><a href="#" data-subcategory="Crystal">Crystal</a></li>
+                        <li><a href="#" data-subcategory="XELASTEC">XELASTEC</a></li>
+                        <li><a href="#" data-subcategory="Sedna_Earfit">Sedna Earfit</a></li>
+                    </ul>
+                </div>
+                <div class="sub-menu-column sub-categories">
+                    <ul id="Foamax-sub">
+                        <li><a href="#">standard</a></li>
+                    </ul>
+                    <ul id="MAX-sub" style="display: none;">
+                        <li><a href="#">forTWS</a></li>
+                        <li><a href="#">Standard</a></li>
+                        <li><a href="#">for AirPods Pro</a></li>
+                        <li><a href="#">for Galaxy Buds2 Pro</a></li>
+                        <li><a href="#">for TWS 6</a></li>
+                    </ul>
+                    <ul id="MAX ASMR-sub" style="display: none;">
+                        <li><a href="#">Standard</a></li>
+                    </ul>
+                    <ul id="Crystal-sub" style="display: none;">
+                        <li><a href="#">Standard</a></li>
+                        <li><a href="#">for BOSE Earbuds</a></li>
+                        <li><a href="#">Ver II Standard</a></li>
+                        <li><a href="#">for TWS</a></li>
+                        <li><a href="#">for AirPods Pro</a></li>
+                        <li><a href="#">for Galaxy Buds Pro</a></li>
+                        <li><a href="#">for Galaxy Buds Pro Clear Pearl</a></li>
+                    </ul>
+                    <ul id="XELASTEC-sub" style="display: none;">
+                        <li><a href="#">Standard</a></li>
+                        <li><a href="#">for AirPods Pro</a></li>
+                        <li><a href="#">Standard VerⅡ</a></li>
+                    </ul>
+                    <ul id="Sedna Earfit-sub" style="display: none;">
+                        <li><a href="#">Standard</a></li>
+                        <li><a href="#">Short</a></li>
+                        <li><a href="#">Light</a></li>
+                        <li><a href="#">Light Short</a></li>
+                        <li><a href="#">ORIGIN</a></li>
+                        <li><a href="#">VIVID Edition</a></li>
+                    </ul>
+                </div>
+                <div class="sub-menu-column image-column">
+                    <img src="./img/ares.png" alt="AZLA Silicone Earfit product lineup">
+                </div>
+            </div>
+            <!-- 다른 메뉴 항목들에 대한 서브메뉴 유사한 구조로 추가 -->
+            <!-- 오디오 -->
+            <div id="audio" class="sub-menu-content">
+                <div class="sub-menu-column main-categories">
+                    <ul>
+                        <li><a href="#" data-subcategory="AMAP-A7">AMAP-A7</a></li>
+                        <li><a href="#" data-subcategory="AMAP-1000">AMAP-1000</a></li>
+                        <li><a href="#" data-subcategory="POM-1000">POM-1000</a></li>
+                        <li><a href="#" data-subcategory="POM10S">POM10S</a></li>
+                    </ul>
+                </div>
+                <div class="sub-menu-column sub-categories">
+                    <ul id="hires-sub">
+                        <li><a href="#">AIM C</a></li>
+                    </ul>
+                    <ul id="silicone-sub" style="display: none;">
+                        <li><a href="#">ASE-500</a></li>
+                        <li><a href="#">ASE-500 ASMR</a></li>
+                    </ul>
+                    <ul id="gaming-sub" style="display: none;">
+                        <li><a href="#">AZEL EDITION G GEN 2</a></li>
+                        <li><a href="#">PASCAL</a></li>
+                        <li><a href="#">ARES Clear</a></li>
+                        <li><a href="#">AWACS</a></li>
+                        <li><a href="#">ANUBIS</a></li>
+                        <li><a href="#">AZEL Edition G</a></li>
+                        <li><a href="#">ARES</a></li>
+                        <li><a href="#">AIM 8</a></li>
+                    </ul>
+                    <ul id="wireless-sub" style="display: none;">
+                        <li><a href="#">RF2000</a></li>
+                    </ul>
+                </div>
+                <div class="sub-menu-column image-column">
+                    <img src="./img/ares.png" alt="Earphones">
+                </div>
+            </div>
+            <!-- 케이블 -->
+            <div id="cables" class="sub-menu-content">
+                <div class="sub-menu-column main-categories">
+                    <ul>
+                        <li><a href="#" data-subcategory="Gender">Gender</a></li>
+                        <li><a href="#" data-subcategory="HORIZON Ⅱ">HORIZON Ⅱ</a></li>
+                        <li><a href="#" data-subcategory="ORTA">ORTA</a></li>
+                        <li><a href="#" data-subcategory="01R_MK2">01R MK2</a></li>
+                    </ul>
+                </div>
+                <div class="sub-menu-column image-column">
+                    <ul id="Gender-sub">
+                        <li><a href="#"></a></li>
+                    </ul>
+                    <ul id="HORIZON Ⅱ-sub">
+                        <li><a href="#"></a></li>
+                    </ul>
+                    <ul id="ORTA-sub">
+                        <li><a href="#"></a></li>
+                    </ul>
+                    <ul id="01R_MK2-sub">
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="jumbotron">
+            <div class="inner">
+                <h1 class="volume-text" aria-label="Break Your Limit! To the NEXT LEVEL!">
+                    Break Your Limit! To the NEXT LEVEL!
+                </h1>
+                <p>Gaming Earphones ARES</p>
+                <a href="#" class="btn btn-primary">Request Work</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="inner">
+                <h2 class="section-title">About Us</h2>
+                <p>AZLA is a company that manufactures and sells high-quality earphones, earbuds, and other audio
+                    accessories. We are dedicated to providing the best listening experience for our customers.</p>
+            </div>
+        </section>
+
+        <!-- 제품 섹션 -->
+        <!-- <section class="product-section">
+            <h2 class="section-title">Our Products</h2>
+            <div class="product-scroll-container">
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="./img/swiper-Ares.png" alt="ARES">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">ARES</h3>
+                            <p class="product-description">아즈라 게이밍 이어폰 아레스 블랙</p>
+                            <p class="category">in-Ear</p>
+                            <p class="price">159,000원</p>
+                        </div>
+                        <button class="buy-button">구매</button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="./img/swiper-Azel.png" alt="AZEL">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">AZEL</h3>
+                            <p class="product-description">아즈라 게이밍 이어폰 아젤 에디션G 2세대</p>
+                            <p class="category">in-Ear</p>
+                            <p class="price">99,000원</p>
+                        </div>
+                        <button class="buy-button">구매</button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="./img/swiper-Horizon2.png" alt="HORIZON 2">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">HORIZON 2</h3>
+                            <p class="product-description">아즈라 이어폰 호라이즌2</p>
+                            <p class="category">in-Ear</p>
+                            <p class="price">189,000원</p>
+                        </div>
+                        <button class="buy-button">구매</button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="./img/swiper-Zwei.png" alt="ZWEI">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">ZWEI</h3>
+                            <p class="product-description">아즈라 쯔바이</p>
+                            <p class="category">in-Ear</p>
+                            <p class="price">329,000원</p>
+                        </div>
+                        <button class="buy-button">구매</button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="./img/swiper-01R_MK2.png" alt="01R MKII">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">01R MKII</h3>
+                            <p class="product-description">아즈라 01R MKII</p>
+                            <p class="category">in-Ear</p>
+                            <p class="price">429,000원</p>
+                        </div>
+                        <button class="buy-button">구매</button>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">AZLA Repair</a>
+                <a href="#">Business</a>
+                <a href="#">Blog&News</a>
+            </div>
+            <div class="footer-info">
+                <p>Headquarters: Postcode 06721 3F, Jikyeong building, 332, Hyoryeong-ro, Seocho-gu, Seoul, Korea</p>
+                <p>Representative: Sangwon Lee, Business registration number: 601-81-37177</p>
+                <p>More ways to shop: Find the AZLA online market or a nearby branch</p>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2023 AZLA Inc. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

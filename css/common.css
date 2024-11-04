@@ -1,0 +1,35 @@
+@charset "utf-8";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+:root {
+    /* fz62.5p */
+    font-size: 62.5%;
+    /* 10px --> 1rem */
+    --main-color: #0ebfdd;
+    --main-dark-color: #009fbb;
+    --title-color: #222;
+    --text-color: #666;
+    --sub-color: #e7e1e1;
+    --white50: rgba(255, 255, 255, 0.5);
+    --black50: rgba(0, 0, 0, 0.5);
+}
+
+hr,
+.hidden {
+    margin: -1px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+body {
+    font: 2rem/1.5 Pretendard, sans-serif;
+    color: var(--text-color);
+}
+
+@media (max-height: 600px) {
+    .sub-menu-content {
+        max-height: 70vh;
+    }
+}
