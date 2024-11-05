@@ -250,7 +250,7 @@ nav .sub-menu li a:hover {
 /* 호버 효과 (선택사항) */
 .cart-button:hover .cart-icon {
     color: #ffffff;
-    /* 호버 시 흰색으로 변경 */
+    /* 버 시 흰색으로 변경 */
 }
 
 /* 탭메뉴 */
@@ -394,7 +394,7 @@ nav .sub-menu li a:hover {
     font-weight: 500;
     /* 글자 두께 조정 */
     transition: color 0.3s ease;
-    /* 호버 효과를 한 전환 */
+    /* 호버 과를 한 전환 */
 }
 
 .sub-menu-column.main-categories a:hover {
@@ -462,34 +462,30 @@ nav .sub-menu li a:hover {
 
 .product-card {
     flex: 0 0 300px;
-    background-color: #333;
+    background-color: #fff;
     border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    margin-right: 20px;
-    /* 카드 사이의 간격 */
+    transition: transform 0.3s;
 }
 
 .product-image {
-    width: 100%;
-    height: 0;
-    padding-bottom: 100%;
-    /* 1:1 비율 유지 */
-    position: relative;
-    background-color: #fff;
-    /* 배경색 변경 */
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
     overflow: hidden;
 }
 
 .product-image img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    height: auto;
     object-fit: contain;
-    /* 이미지 비율 유지하면서 컨테이너에 맞춤 */
+    display: block;
+    margin: 0;
 }
 
 .product-info {
@@ -502,7 +498,7 @@ nav .sub-menu li a:hover {
 }
 
 .product-name {
-    font-size: 14px;
+    font-size: 24px;
     font-weight: bold;
     color: white;
     margin-bottom: 2px;
@@ -521,9 +517,9 @@ nav .sub-menu li a:hover {
 }
 
 .price {
-    font-size: 16px;
-    font-weight: bold;
-    color: #0f0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
     margin-top: auto;
     margin-bottom: 5px;
 }
@@ -574,7 +570,8 @@ nav .sub-menu li a:hover {
 .product-grid {
     display: flex;
     gap: 20px;
-    padding: 0 20px;
+    padding: 20px;
+    overflow-x: auto;
 }
 
 .product-card {
@@ -584,15 +581,19 @@ nav .sub-menu li a:hover {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
 }
 
 .product-image {
-    height: 300px;
-    background-color: #fff;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    background-color: #fff;
 }
 
 .product-image img {
@@ -603,7 +604,7 @@ nav .sub-menu li a:hover {
 
 .product-info {
     padding: 15px;
-    background-color: #333;
+    text-align: left;
 }
 
 .product-name {
@@ -617,12 +618,6 @@ nav .sub-menu li a:hover {
     font-size: 14px;
     color: #aaa;
     margin-bottom: 5px;
-}
-
-.category {
-    font-size: 12px;
-    color: #666;
-    margin-bottom: 10px;
 }
 
 .price {
@@ -675,15 +670,14 @@ nav .sub-menu li a:hover {
 
 /* 새로운 제품 섹션 스타일 */
 .product-section {
+    background-color: #1b1b1b;
     padding: 40px 20px;
-    background-color: #222;
-    color: white;
 }
 
 .section-title {
+    color: #fff;
     text-align: center;
     margin-bottom: 30px;
-    color: white;
     font-size: 24px;
 }
 
@@ -745,7 +739,7 @@ nav .sub-menu li a:hover {
 .product-card {
     flex: 0 0 auto;
     width: 300px;
-    /* 카드 너비 조정 */
+    /* 카드 너비 정 */
 }
 
 .product-grid {
@@ -953,7 +947,7 @@ footer {
 
 #hires-sub {
     margin-left: 20px;
-    /* 서브 카테고리 들여쓰기 */
+    /* 서브 ���테고리 들여쓰기 */
 }
 
 /* 이미지 컨테이너 스타일 */
@@ -996,4 +990,275 @@ footer {
 .sub-menu-column.sub-categories a:hover {
     color: #3498db;
     /* 푸른색으로 변경 */
+}
+
+/* Update the product section background color */
+.product-section {
+    background-color: #1b1b1b;
+    /* Dark background */
+    padding: 40px 20px;
+}
+
+/* Update section title color */
+.section-title {
+    color: #fff;
+    /* White text */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+/* Update product card styles */
+.product-card {
+    flex: 0 0 300px;
+    /* Card width */
+    background-color: #fff;
+    /* Card background */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* 그림자 효과 */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+}
+
+/* Image container */
+.product-image {
+    height: auto;
+    /* 높이를 자동으로 조정 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+/* Image styles */
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0;
+}
+
+/* Update product info styles */
+.product-info {
+    padding: 15px;
+    text-align: left;
+    background: #F7F8FC;
+}
+
+/* Update button styles */
+.buy-button {
+    background-color: #4cd964;
+    /* Green button */
+    color: #000;
+    /* Black text */
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for buttons */
+.buy-button:hover {
+    background-color: #00b300;
+    /* Darker green on hover */
+}
+
+/* Add styles for the "자세히 보기" button */
+.details-button {
+    background-color: transparent;
+    /* Transparent background */
+    color: #3498db;
+    /* Blue text */
+    border: 2px solid #3498db;
+    /* Blue border */
+    padding: 8px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for details button */
+.details-button:hover {
+    background-color: #3498db;
+    /* Blue background on hover */
+    color: white;
+    /* White text on hover */
+}
+
+/* 제품 섹션 스타일 */
+.product-section {
+    background-color: #f9f9f9;
+    /* 밝은 배경 */
+    padding: 40px 20px;
+}
+
+/* 섹션 제목 스타일 */
+.section-title {
+    color: #333;
+    /* 어두운 텍스트 */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+/* 제품 카드 그리드 스타일 */
+.product-scroll-container {
+    overflow-x: auto;
+    padding: 20px 0;
+}
+
+.product-grid {
+    display: flex;
+    gap: 20px;
+}
+
+/* 제품 카드 스타일 */
+.product-card {
+    flex: 0 0 300px;
+    /* 카드 너비 */
+    background-color: #fff;
+    /* 카드 배경 */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* 그림자 효과 */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+}
+
+/* 이미지 컨테이너 스타일 */
+.product-image {
+    height: auto;
+    /* 높이를 자동으로 조정 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+/* 이미지 스타일 */
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0;
+}
+
+/* 제품 정보 스타일 */
+.product-info {
+    padding: 15px;
+    text-align: center;
+    /* 중앙 정렬 */
+}
+
+/* 제품 이름 스타일 */
+.product-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #252525;
+    /* 어두운 텍스트 */
+    margin-bottom: 20px;
+}
+
+/* 제품 설명 스타일 */
+.product-description {
+    font-size: 18px;
+    color: #777;
+    /* 연한 회색 */
+    margin-top: 5px;
+}
+
+/* 가격 스타일 */
+.price {
+    font-size: 18px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+/* 구매 버튼 스타일 */
+.buy-button {
+    background-color: #3498db;
+    /* 파란색 버튼 */
+    color: #fff;
+    /* 흰색 텍스트 */
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    /* 둥근 모서리 */
+    transition: background-color 0.3s ease;
+}
+
+/* Hover 효과 */
+.buy-button:hover {
+    background-color: #2980b9;
+    /* 어두운 파란색 */
+}
+
+/* 자세히 보기 버튼 스타일 */
+.details-button {
+    background-color: transparent;
+    /* 투명 배경 */
+    color: #3498db;
+    /* 파란색 텍스트 */
+    border: 2px solid #3498db;
+    /* 파란색 테두리 */
+    padding: 8px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    /* 둥근 모서리 */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover 효과 */
+.details-button:hover {
+    background-color: #3498db;
+    /* 파란색 배경 */
+    color: white;
+    /* 흰색 텍스트 */
+}
+
+.carousel-button {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.carousel-button.prev {
+    left: 10px;
+    /* 왼쪽 위치 */
+}
+
+.carousel-button.next {
+    right: 10px;
+    /* 오른쪽 위치 */
 }

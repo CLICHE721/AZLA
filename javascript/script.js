@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Swiper 초기화
-    new Swiper('.product-slider', {
+    const swiper = new Swiper('.product-scroll-container', {
         slidesPerView: 1,
         spaceBetween: 10,
         navigation: {
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
         productContainer.scrollLeft = scrollLeft - walk;
     });
 
-    // 스크롤 관성 추��
+    // 스크롤 관성 추
     let momentum;
     let animationId;
 
