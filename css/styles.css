@@ -394,7 +394,7 @@ nav .sub-menu li a:hover {
     font-weight: 500;
     /* 글자 두께 조정 */
     transition: color 0.3s ease;
-    /* 호버 과를 한 전환 */
+    /* 호버 ��를 한 전환 */
 }
 
 .sub-menu-column.main-categories a:hover {
@@ -947,7 +947,7 @@ footer {
 
 #hires-sub {
     margin-left: 20px;
-    /* 서브 ���테고리 들여쓰기 */
+    /* 서브 테고리 들여쓰기 */
 }
 
 /* 이미지 컨테이너 스타일 */
@@ -1052,47 +1052,49 @@ footer {
 
 /* Update button styles */
 .buy-button {
-    background-color: #4cd964;
-    /* Green button */
-    color: #000;
-    /* Black text */
+    background-color: #3498db;
+    /* 파란색 버튼 */
+    color: #fff;
+    /* 흰색 텍스트 */
     border: none;
     padding: 10px;
     width: 100%;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
+    border-radius: 20px;
     transition: background-color 0.3s ease;
 }
 
 /* Hover effect for buttons */
 .buy-button:hover {
-    background-color: #00b300;
-    /* Darker green on hover */
+    background-color: #2980b9;
+    /* 어두운 파란색 */
 }
 
 /* Add styles for the "자세히 보기" button */
 .details-button {
     background-color: transparent;
-    /* Transparent background */
+    /* 투명 배경 */
     color: #3498db;
-    /* Blue text */
+    /* 파란색 텍스트 */
     border: 2px solid #3498db;
-    /* Blue border */
+    /* 파란색 테두리 */
     padding: 8px;
     width: 100%;
     cursor: pointer;
     font-size: 14px;
     font-weight: bold;
+    border-radius: 20px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Hover effect for details button */
 .details-button:hover {
     background-color: #3498db;
-    /* Blue background on hover */
+    /* 파란색 배경 */
     color: white;
-    /* White text on hover */
+    /* 흰색 텍스트 */
 }
 
 /* 제품 섹션 스타일 */
@@ -1201,8 +1203,7 @@ footer {
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    border-radius: 5px;
-    /* 둥근 모서리 */
+    border-radius: 20px;
     transition: background-color 0.3s ease;
 }
 
@@ -1215,18 +1216,12 @@ footer {
 /* 자세히 보기 버튼 스타일 */
 .details-button {
     background-color: transparent;
-    /* 투명 배경 */
-    color: #3498db;
-    /* 파란색 텍스트 */
-    border: 2px solid #3498db;
-    /* 파란색 테두리 */
     padding: 8px;
     width: 100%;
     cursor: pointer;
     font-size: 14px;
     font-weight: bold;
-    border-radius: 5px;
-    /* 둥근 모서리 */
+    border-radius: 20px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -1261,4 +1256,37 @@ footer {
 .carousel-button.next {
     right: 10px;
     /* 오른쪽 위치 */
+}
+
+.hover-image {
+    position: absolute;
+    /* 절대 위치 */
+    top: 0;
+    /* 필요에 따라 조정 */
+    left: 100%;
+    /* 오른쪽에 위치 */
+    width: 200px;
+    /* 이미지 크기 조정 */
+    display: none;
+    /* 기본적으로 숨김 */
+}
+
+.hover-trigger:hover+.hover-image {
+    display: block;
+    /* 마우스 오버 시 보이기 */
+}
+
+.sub-menu-column.image-column {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 200px;
+}
+
+.hover-image {
+    display: none;
+}
+
+.hover-trigger:hover+.hover-image {
+    display: block;
 }

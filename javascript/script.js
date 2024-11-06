@@ -53,6 +53,12 @@ $(document).ready(function() {
             $(this).addClass('active');
         }
     );
+
+    $('.hover-trigger').hover(function() {
+        $(this).siblings('.hover-image').fadeIn(200);
+    }, function() {
+        $(this).siblings('.hover-image').fadeOut(200);
+    });
 });
 
 document.addEventListener('DOMContentLoaded', function() {

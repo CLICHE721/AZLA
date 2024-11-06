@@ -4,6 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="AZLA">
+    <meta name="description" content="AZLA의 프리미엄 이어폰 - 고품질 사운드와 세련된 디자인으로 청취 경험을 극대화합니다.">
+
+    <title>AZLA 이어폰 - 프리미엄 사운드와 세련된 디자인</title>
+    <meta name="keywords" content="AZLA, AZLA 이어폰, 프리미엄 이어폰, 고음질 이어폰, 하이엔드 이어폰, 이어폰 추천, 청취 경험, 음질 좋은 이어폰">
+
+    <link rel="canonical" href="https://www.azla.com">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.azla.com">
+    <meta property="og:title" content="AZLA 이어폰 - 최고의 음질을 경험하세요">
+    <meta property="og:description" content="AZLA는 최상의 사운드와 완벽한 착용감을 제공합니다. 지금 최고의 이어폰을 만나보세요!">
+    <meta property="og:image" content="https://www.azla.com/images/og-image.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.azla.com">
+    <meta name="twitter:title" content="AZLA 이어폰 - 최상의 사운드 경험">
+    <meta name="twitter:description" content="AZLA의 프리미엄 이어폰으로 새로운 청취 경험을 선사합니다. 지금 만나보세요.">
+    <meta name="twitter:image" content="https://www.azla.com/images/twitter-image.jpg">
 
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/reset.css">
@@ -30,7 +50,6 @@
                     <li><a href="#" data-submenu="hires-earphones">이어폰</a></li>
                     <li><a href="#" data-submenu="silicone-SednaEarfit">이어팁</a></li>
                     <li><a href="#" data-submenu="audio">오디오</a></li>
-                    <!-- <li><a href="#" data-submenu="earplugs">이어플러그</a></li> -->
                     <li><a href="#" data-submenu="cables">케이블</a></li>
                 </ul>
             </nav>
@@ -71,12 +90,18 @@
                 </div>
                 <div class="sub-menu-column sub-categories">
                     <ul id="hires-sub">
-                        <li><a href="#" data-image="./img/ares.png" data-subcategory="hires">AIM C</a></li>
-                        <li><a href="#" data-image="./img/horizon.png" data-subcategory="hires">HORIZON Ⅱ</a></li>
-                        <li><a href="#" data-image="./img/01r_mk2.png" data-subcategory="hires">01R MK2</a></li>
-                        <li><a href="#" data-image="./img/zwei.png" data-subcategory="hires">ZWEI</a></li>
-                        <li><a href="#" data-image="./img/orta.png" data-subcategory="hires">ORTA</a></li>
-                        <li><a href="#" data-image="./img/horizon.png" data-subcategory="hires">HORIZON</a></li>
+                        <li>
+                            <a href="#" data-subcategory="aim-c" class="hover-trigger">AIM C</a>
+                            <img src="./img/aim-c.png" alt="AIM C" class="hover-image" style="display: none;">
+                        </li>
+                        <li>
+                            <a href="#" data-subcategory="horizon-ii" class="hover-trigger">HORIZON II</a>
+                            <img src="./img/horizon-ii.png" alt="HORIZON II" class="hover-image" style="display: none;">
+                        </li>
+                        <li><a href="#" data-subcategory="01r-mk2">01R MK2</a></li>
+                        <li><a href="#" data-subcategory="zwei">ZWEI</a></li>
+                        <li><a href="#" data-subcategory="orta">ORTA</a></li>
+                        <li><a href="#" data-subcategory="horizon">HORIZON</a></li>
                     </ul>
                     <ul id="silicone-sub" style="display: none;">
                         <li><a href="#">ASE-500</a></li>
@@ -95,9 +120,6 @@
                     <ul id="wireless-sub" style="display: none;">
                         <li><a href="#">RF2000</a></li>
                     </ul>
-                </div>
-                <div class="sub-menu-column image-column">
-                    <img id="product-image" src="./img/ares.png" alt="Earphones">
                 </div>
             </div>
 
@@ -150,9 +172,6 @@
                         <li><a href="#">VIVID Edition</a></li>
                     </ul>
                 </div>
-                <div class="sub-menu-column image-column">
-                    <img src="./img/ares.png" alt="AZLA Silicone Earfit product lineup">
-                </div>
             </div>
             <!-- 다른 메뉴 항목들에 대한 서브메뉴 유사한 구조로 추가 -->
             <!-- 오디오 -->
@@ -187,9 +206,9 @@
                         <li><a href="#">RF2000</a></li>
                     </ul>
                 </div>
-                <div class="sub-menu-column image-column">
+                <!-- <div class="sub-menu-column image-column">
                     <img src="./img/ares.png" alt="Earphones">
-                </div>
+                </div> -->
             </div>
             <!-- 케이블 -->
             <div id="cables" class="sub-menu-content">
@@ -246,6 +265,9 @@
             <h2 class="section-title">Our Products</h2>
             <div class="product-scroll-container">
                 <div class="product-grid">
+                    <!-- 스와이퍼 화살표 버튼 -->
+                    <div class="swiper-button-prev carousel-button prev"></div>
+                    <div class="swiper-button-next carousel-button next"></div>
 
                     <!-- ARES-Black -->
                     <div class="product-card">
@@ -362,9 +384,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- 스와이퍼 화살표 버튼 -->
-                <div class="swiper-button-prev carousel-button prev"></div>
-                <div class="swiper-button-next carousel-button next"></div>
             </div>
         </section>
 
