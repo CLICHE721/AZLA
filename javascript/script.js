@@ -59,6 +59,45 @@ $(document).ready(function() {
     }, function() {
         $(this).siblings('.hover-image').fadeOut(200);
     });
+
+    // 섹션 스크롤 기능 추가
+    const sections = document.querySelectorAll('section'); // 모든 섹션 선택
+    const footer = document.querySelector('footer'); // 푸터 선택
+    let isScrolling = false; // 스크롤 중인지 여부
+
+    window.addEventListener('wheel', (e) => {
+        // 푸터에 도달했을 때 스크롤 무시
+        const footerRect = footer.getBoundingClientRect();
+        if (footerRect.top >= 0 && footerRect.bottom <= window.innerHeight) {
+            e.preventDefault(); // 기본 스크롤 방지
+            return; // 푸터에서 스크롤 시 아무 동작도 하지 않음
+        }
+
+        if (isScrolling) return; // 스크롤 중이면 무시
+
+        isScrolling = true; // 스크롤 시작
+        const delta = e.deltaY > 0 ? 1 : -1; // 스크롤 방향
+
+        // 현재 섹션 인덱스 찾기
+        const currentSection = Array.from(sections).findIndex(section => {
+            const rect = section.getBoundingClientRect();
+            return rect.top >= 0 && rect.top < window.innerHeight;
+        });
+
+        // 다음 섹션 인덱스 계산
+        const nextSectionIndex = currentSection + delta;
+
+        if (nextSectionIndex >= 0 && nextSectionIndex < sections.length) {
+            sections[nextSectionIndex].scrollIntoView({
+                behavior: 'smooth' // 부드러운 스크롤
+            });
+        }
+
+        // 스크롤 완료 후 상태 초기화
+        setTimeout(() => {
+            isScrolling = false;
+        }, 600); // 스크롤 애니메이션 시간과 일치시킴
+    });
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -201,4 +240,5 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.color = '#333';
         });
     });
+
 });

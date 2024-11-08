@@ -33,3 +33,76 @@ body {
         max-height: 70vh;
     }
 }
+
+/* 모바일 해상도에 대한 스타일 */
+@media (max-width: 600px) {
+    header {
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+    }
+
+    .logo a {
+        font-size: 1.5rem;
+        white-space: nowrap;
+    }
+
+    .main-menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-grow: 1;
+        justify-content: center;
+    }
+
+    .main-menu>li {
+        margin: 0 10px;
+        font-size: 0.9rem;
+    }
+
+    .header-icons {
+        display: flex;
+        align-items: center;
+    }
+
+    .header-icons .search-container,
+    .header-icons .cart-container {
+        margin-left: 10px;
+    }
+
+    .header-icons i {
+        font-size: 1.2rem;
+    }
+
+    #hero {
+        height: 300px;
+        padding: 20px 10px;
+    }
+
+    #hero h1 {
+        font-size: 3rem;
+        line-height: 1.2;
+    }
+
+    #hero p {
+        font-size: 1.2rem;
+    }
+
+    .product-card {
+        flex: 0 0 100%;
+        margin-bottom: 15px;
+    }
+
+    .button-container {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .buy-button,
+    .details-button {
+        width: 80px;
+        margin: 0 5px;
+    }
+}

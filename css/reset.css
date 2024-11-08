@@ -3,6 +3,8 @@ body {
     background: #FAFAFC;
     color: #4a4a4e;
     transition: .2s all;
+    margin: 0;
+    scroll-behavior: smooth;
 }
 
 .dark {
