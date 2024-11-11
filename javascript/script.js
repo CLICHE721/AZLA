@@ -34,43 +34,17 @@ $(document).ready(function() {
         }
     );
 
-    // 메인 카테고리 호버 이벤트
-    $('.main-categories ul li a').hover(
-        function() {
-            $('.main-categories ul li a').removeClass('active');
-            $(this).addClass('active');
-            
-            const subcategory = $(this).data('subcategory');
-            $('.sub-menu-column.sub-categories ul').hide();
-            $(`#${subcategory}-sub`).show();
-        }
-    );
-
-    // 서브 카테고리 호버 이벤트
-    $('.sub-categories ul li a').hover(
-        function() {
-            $('.sub-categories ul li a').removeClass('active');
-            $(this).addClass('active');
-        }
-    );
-
-    $('.hover-trigger').hover(function() {
-        $(this).siblings('.hover-image').fadeIn(200);
-    }, function() {
-        $(this).siblings('.hover-image').fadeOut(200);
-    });
-
     // 섹션 스크롤 기능 추가
     const sections = document.querySelectorAll('section'); // 모든 섹션 선택
-    const footer = document.querySelector('footer'); // 푸터 선택
     let isScrolling = false; // 스크롤 중인지 여부
 
     window.addEventListener('wheel', (e) => {
-        // 푸터에 도달했을 때 스크롤 무시
+        // 푸터 영역에서 스크롤 시 상단으로 이동하지 않도록 설정
+        const footer = document.querySelector('footer');
         const footerRect = footer.getBoundingClientRect();
-        if (footerRect.top >= 0 && footerRect.bottom <= window.innerHeight) {
-            e.preventDefault(); // 기본 스크롤 방지
-            return; // 푸터에서 스크롤 시 아무 동작도 하지 않음
+
+        if (footerRect.top <= window.innerHeight && footerRect.bottom >= 0) {
+            return; // 푸터 영역에서 스크롤 시 아무 동작도 하지 않음
         }
 
         if (isScrolling) return; // 스크롤 중이면 무시
@@ -87,6 +61,7 @@ $(document).ready(function() {
         // 다음 섹션 인덱스 계산
         const nextSectionIndex = currentSection + delta;
 
+        // 유효한 인덱스인지 확인
         if (nextSectionIndex >= 0 && nextSectionIndex < sections.length) {
             sections[nextSectionIndex].scrollIntoView({
                 behavior: 'smooth' // 부드러운 스크롤
@@ -97,20 +72,6 @@ $(document).ready(function() {
         setTimeout(() => {
             isScrolling = false;
         }, 600); // 스크롤 애니메이션 시간과 일치시킴
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const mainCategories = document.querySelectorAll('.sub-menu-column.main-categories a');
-    
-    mainCategories.forEach(category => {
-        category.addEventListener('click', function(e) {
-            e.preventDefault();
-            mainCategories.forEach(cat => cat.classList.remove('active'));
-            this.classList.add('active');
-            
-            // 여기에 서브 카테고리 표시 로직 추가
-        });
     });
 
     // Swiper 초기화
@@ -167,64 +128,16 @@ document.addEventListener('DOMContentLoaded', function() {
         productContainer.scrollLeft = scrollLeft - walk;
     });
 
-    // 스크롤 관성 추
-    let momentum;
-    let animationId;
-
-    function momentumScroll() {
-        productContainer.scrollLeft += momentum;
-        momentum *= 0.95; // 감속률
-
-        if (Math.abs(momentum) > 0.5) {
-            animationId = requestAnimationFrame(momentumScroll);
-        } else {
-            cancelAnimationFrame(animationId);
-        }
-    }
-
-    productContainer.addEventListener('mouseup', (e) => {
-        isDown = false;
-        productContainer.classList.remove('active');
-        
-        // 마우스를 뗄 때 관성 스크롤 시작
-        momentum = (startX - (e.pageX - productContainer.offsetLeft)) * 0.1;
-        requestAnimationFrame(momentumScroll);
-    });
-
     // 마우스 휠 이벤트 리스너 추가
     productContainer.addEventListener('wheel', (e) => {
-        e.preventDefault();
-        productContainer.scrollLeft += e.deltaY;
-    });
+        e.preventDefault(); // 기본 스크롤 방지
+        productContainer.scrollLeft += e.deltaY; // 가로 스크롤
 
-    const productGrid = document.querySelector('.product-grid');
-    const prevButton = document.querySelector('.carousel-button.prev');
-    const nextButton = document.querySelector('.carousel-button.next');
-    const productCards = document.querySelectorAll('.product-card');
-    
-    let currentIndex = 0;
-    const cardWidth = 320; // 카드 너비 + 마진
-
-    function updateCarousel() {
-        productGrid.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-        
-        // 버튼 활성화/비활성화
-        prevButton.disabled = currentIndex === 0;
-        nextButton.disabled = currentIndex >= productCards.length - 3; // 한 번에 3개 카드 표시 가정
-    }
-
-    prevButton.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
-        }
-    });
-
-    nextButton.addEventListener('click', () => {
-        if (currentIndex < productCards.length - 3) { // 한 번에 3개 카드 표시 가정
-            currentIndex++;
-            updateCarousel();
-        }
+        // 섹션 스크롤 비활성화
+        isScrolling = true;
+        setTimeout(() => {
+            isScrolling = false;
+        }, 600); // 스크롤 애니메이션 시간과 일치시킴
     });
 
     // 초기 상태 설정
@@ -240,5 +153,4 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.color = '#333';
         });
     });
-
 });
