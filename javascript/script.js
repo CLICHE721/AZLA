@@ -1,5 +1,7 @@
 $(document).ready(function() {
     let submenuTimeout;
+    let isScrolling = false; // 스크롤 상태 추적
+    const sections = document.querySelectorAll('section'); // 모든 섹션 선택
 
     // 메인 메뉴 호버 이벤트
     $('.main-menu > li > a').hover(
@@ -21,6 +23,32 @@ $(document).ready(function() {
         }
     );
 
+    // 섹션 스크롤 이벤트
+    window.addEventListener('wheel', (e) => {
+        if (isScrolling) return; // 여러 번 스크롤 방지
+
+        const delta = e.deltaY > 0 ? 1 : -1; // 스크롤 방향
+        const currentSection = Array.from(sections).findIndex(section => {
+            const rect = section.getBoundingClientRect();
+            return rect.top >= 0 && rect.top < window.innerHeight;
+        });
+
+        const nextSectionIndex = currentSection + delta;
+
+        // 다음 섹션 인덱스가 유효한지 확인
+        if (nextSectionIndex >= 0 && nextSectionIndex < sections.length) {
+            isScrolling = true; // 스크롤 상태 설정
+            sections[nextSectionIndex].scrollIntoView({
+                behavior: 'smooth' // 부드러운 스크롤
+            });
+
+            // 타임아웃 후 스크롤 상태 초기화
+            setTimeout(() => {
+                isScrolling = false;
+            }, 800); // 스크롤 애니메이션 시간과 일치시킴
+        }
+    });
+
     // 서브메뉴 호버 이벤트
     $('.sub-menu-container').hover(
         function() {
@@ -33,46 +61,6 @@ $(document).ready(function() {
             }, 200);
         }
     );
-
-    // 섹션 스크롤 기능 추가
-    const sections = document.querySelectorAll('section'); // 모든 섹션 선택
-    let isScrolling = false; // 스크롤 중인지 여부
-
-    window.addEventListener('wheel', (e) => {
-        // 푸터 영역에서 스크롤 시 상단으로 이동하지 않도록 설정
-        const footer = document.querySelector('footer');
-        const footerRect = footer.getBoundingClientRect();
-
-        if (footerRect.top <= window.innerHeight && footerRect.bottom >= 0) {
-            return; // 푸터 영역에서 스크롤 시 아무 동작도 하지 않음
-        }
-
-        if (isScrolling) return; // 스크롤 중이면 무시
-
-        isScrolling = true; // 스크롤 시작
-        const delta = e.deltaY > 0 ? 1 : -1; // 스크롤 방향
-
-        // 현재 섹션 인덱스 찾기
-        const currentSection = Array.from(sections).findIndex(section => {
-            const rect = section.getBoundingClientRect();
-            return rect.top >= 0 && rect.top < window.innerHeight;
-        });
-
-        // 다음 섹션 인덱스 계산
-        const nextSectionIndex = currentSection + delta;
-
-        // 유효한 인덱스인지 확인
-        if (nextSectionIndex >= 0 && nextSectionIndex < sections.length) {
-            sections[nextSectionIndex].scrollIntoView({
-                behavior: 'smooth' // 부드러운 스크롤
-            });
-        }
-
-        // 스크롤 완료 후 상태 초기화
-        setTimeout(() => {
-            isScrolling = false;
-        }, 600); // 스크롤 애니메이션 시간과 일치시킴
-    });
 
     // Swiper 초기화
     const swiper = new Swiper('.product-scroll-container', {
